@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Example</title>
+
+  </head>
+  <body>
+    <h1>Covid Cases in US</h1>
+    <script type="text/javascript">
+
+      fetch('https://api.covidtracking.com/v1/us/current.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data[0].positiveIncrease)
+        document.querySelector("#case").innerText= '\n' + 'New Cases Yesterday: ' + data[0].positiveIncrease
+        document.querySelector("#date").innerText= Date(data[0].date)
+        document.querySelector("#death").innerText= '\n' + 'New Deaths Yesterday: ' + data[0].deathIncrease
+      });
+
+      fetch('http://api.weatherapi.com/v1/current.json?key=53fc7e713439431cb47125714201311&q=Seattle')
+      .then(response => response.json())
+      .then(data1 => {
+        console.log(data1.current.is_day)
+        document.querySelector("#temp").innerText= '\n' + 'Current Seattle Weather: ' + data1.current.temp_c +
+        " degC" + ", " + 'Feels Like: ' + data1.current.feelslike_c + " degC" + ", " + data1.current.condition.text
+      });
+
+    </script>
+    <div id="date"></div>
+    <div id="case"></div>
+    <div id="death"></div>
+    <div id="temp"></div>
+
+  </body>
+</html>
