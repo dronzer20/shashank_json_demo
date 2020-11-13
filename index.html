@@ -18,7 +18,7 @@
         document.querySelector("#death").innerText= '\n' + 'New Deaths Yesterday: ' + data[0].deathIncrease
       });
 
-      fetch('http://api.weatherapi.com/v1/current.json?key=53fc7e713439431cb47125714201311&q=Seattle')
+      fetch('https://api.weatherapi.com/v1/current.json?key=53fc7e713439431cb47125714201311&q=Seattle')
       .then(response => response.json())
       .then(data1 => {
         console.log(data1.current.is_day)
