@@ -6,7 +6,12 @@
 
   </head>
   <body>
-    <h1>Covid Cases in US</h1>
+    <h1>Current Covid Cases in the US</h1>
+  <strong>
+    Hello fellow MSIS students. <nav>
+    </nav>This webpage fetches JSON APIs for covid cases in the US and the current Seattle weather.<nav>
+    </nav> The cases data updates every 24 hrs and the weather updates every few minutes.
+<hr><br>
     <script type="text/javascript">
 
       fetch('https://api.covidtracking.com/v1/us/current.json')
@@ -31,6 +36,10 @@
     <div id="case"></div>
     <div id="death"></div>
     <div id="temp"></div>
+<br><br><br><br><br>
+Typical json data flow:<br><br>
 
+    <img src="json.png" alt="JSON FLOW"
+    style="width:350px;height:100px;">
   </body>
 </html>
